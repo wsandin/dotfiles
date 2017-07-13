@@ -1,0 +1,13 @@
+startup_message off
+defscrollback 20000
+vbell off
+autodetach on
+multiuser on
+defutf8 on
+
+hardstatus alwayslastline
+hardstatus string "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D,%c:%s "
+
+termcapinfo xterm* ti@:te@
+term screen-256color
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
