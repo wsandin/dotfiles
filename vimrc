@@ -4,6 +4,7 @@ filetype plugin indent on
 colorscheme elflord
 
 
+set nocompatible
 "set textwidth=75
 set nu
 set hlsearch
