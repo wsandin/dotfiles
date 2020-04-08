@@ -1,5 +1,5 @@
 startup_message off
-defscrollback 20000
+defscrollback 32768
 vbell off
 autodetach on
 multiuser on
