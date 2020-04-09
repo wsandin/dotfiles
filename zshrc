@@ -43,6 +43,7 @@ export DISABLE_FZF_AUTO_COMPLETION="true"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
 
-# Aliases
+# Aliases, because we like colors
 alias ls='colorls'
 alias l='colorls -l'
+alias tail='grc tail'
