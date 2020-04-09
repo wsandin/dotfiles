@@ -29,6 +29,10 @@ plugins=(
     ssh-agent
 )
 
+source $ZSH/oh-my-zsh.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 # Allow us to jump through words, Emacs style whilst using vi-mode plugin
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -41,7 +45,4 @@ export LANG=en_US.UTF-8
 
 # Aliases
 alias ls='colorls'
-
-source $ZSH/oh-my-zsh.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+alias l='colorls -l'
