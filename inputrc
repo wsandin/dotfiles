@@ -1,3 +1,5 @@
+set bell-style none
+
 $if mysql
     set editing-mode vi
 $endif
