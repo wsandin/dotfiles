@@ -1,13 +1,31 @@
-startup_message off
-defscrollback 32768
-vbell off
-autodetach on
-multiuser on
-defutf8 on
+nethack               on              # default: off
+autodetach            on              # default: on
+crlf                  off             # default: off
+deflogin              off             # default: on
+defsilence            off             # default: off
+hardcopy_append       on              # default: off
+#nethack              on              # default: off
+startup_message       off             # default: on
+vbell                 off             # default: ???
+altscreen             on              # default: off
+defbce                on              # default: off
+defnonblock           on              # default: off
 
-hardstatus alwayslastline
-hardstatus string "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D,%c:%s "
 
-termcapinfo xterm* ti@:te@
-term screen-256color
-terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+attrcolor b ".I"
+defscrollback         1000            # default: 100
+msgminwait            3               # default: 1
+silencewait           15              # default: 30
+
+
+shell                 -$SHELL
+
+caption always "%{WB}%?%-Lw%?%{kw}%n*%f %t%?(%u)%?%{WB}%?%+Lw%?%{Wb}"
+hardstatus alwayslastline "%{= RY}%H %{BW} %l %{bW} %c %M %d%= WSNDN LABS"
+
+
+sorendition    wb # yellow on blue
+activity       "%C -> %n%f %t activity!"
+bell                  "%C -> %n%f %t bell!~"
+pow_detach_msg        "BYE"
+vbell_msg             " *beep* "
