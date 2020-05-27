@@ -40,6 +40,7 @@ environ() {
     export DISABLE_FZF_AUTO_COMPLETION="true"
     export MANPATH="/usr/local/man:$MANPATH"
     export LANG=en_US.UTF-8
+    export KEYTIMEOUT=1 # Eliminating delays on <ESC> in vim
 }
 
 
