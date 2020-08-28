@@ -191,4 +191,8 @@ client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background           #2f343f
 
-exec --no-startup-id /usr/bin/feh --randomize --bg-fill ~/images/bg
+fake-outputs 1920x1080+0+0,1920x1080+1920+0
+force_xinerama yes
+
+#exec --no-startup-id /usr/bin/feh --randomize --bg-fill ~/images/bg
+exec --no-startu-id /usr/bin/xsetroot -solid "#333333
