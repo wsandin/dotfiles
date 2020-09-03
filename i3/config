@@ -167,5 +167,6 @@ client.background           #2f343f
 fake-outputs 1920x1080+0+0,1920x1080+1920+0
 force_xinerama yes
 
-#exec --no-startup-id /usr/bin/feh --randomize --bg-fill ~/images/bg
 exec --no-startu-id /usr/bin/xsetroot -solid "#333333
+exec --no-startup-id /usr/bin/setxkbmap -layout us,se
+exec --no-startup-id /usr/bin/setxkbmap -option 'grp:alt_shift_toggle'
