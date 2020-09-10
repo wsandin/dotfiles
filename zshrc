@@ -35,12 +35,13 @@ ohmyzsh_init() {
 
 
 environ() {
-    export PATH=$HOME/bin:/usr/local/bin:$PATH
     export FZF_BASE=$HOME/.fzf
     export DISABLE_FZF_AUTO_COMPLETION="true"
     export MANPATH="/usr/local/man:$MANPATH"
     export LANG=en_US.UTF-8
-    export KEYTIMEOUT=1 # Eliminating delays on <ESC> in vim
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/go
+    export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$GOROOT/bin:$PATH
 }
 
 
