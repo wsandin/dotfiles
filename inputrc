@@ -1,5 +1,14 @@
-set bell-style none
+set editing-mode vi
+set completion-ignore-case on
+set input-meta on
+set output-meta on
+set convert-meta off
 
-$if mysql
-    set editing-mode vi
-$endif
+Control-l: clear-screen
+
+# Use Alt/Meta + Delete to delete the preceding word
+"\e[3;3~": kill-word
+
+# Enable Alt-arrows
+"\e[1;5D": backward-word ### Alt left
+"\e[1;5C": forward-word ### Alt right
