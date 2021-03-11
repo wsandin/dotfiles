@@ -1,0 +1,7 @@
+### Aliases
+alias info="info --vi-keys"
+alias ls='ls -hF --color=auto'
+alias l='ls -alrt'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'

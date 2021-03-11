@@ -1,0 +1,41 @@
+init_local() {
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+    [ -f ~/.bash_functions ] && source ~/.bash_functions
+    [ -f ~/.bash_aliases ] && source ~/.bash_aliases
+    [ -f ~/.bash_env ] && source ~/.bash_env
+}
+
+init_system() {
+    if ! shopt -oq posix; then
+        if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+            # shellcheck source=/dev/null
+            . /usr/share/bash-completion/bash_completion
+        elif [[ -f /etc/bash_completion ]]; then
+            # shellcheck source=/dev/null
+            . /etc/bash_completion
+        elif [[ -f /usr/local/etc/bash_completion ]]; then
+            # shellcheck source=/dev/null
+            . /usr/local/etc/bash_completion
+        fi
+    fi
+    if [[ -d /etc/bash_completion.d/ ]]; then
+        for file in /etc/bash_completion.d/* ; do
+            # shellcheck source=/dev/null
+            source "$file"
+        done
+    fi
+
+    [[ -e "$HOME/.ssh/config" ]] && complete -o "default" \
+        -o "nospace" \
+        -W "$(grep "^Host" ~/.ssh/config | \
+        grep -v "[?*]" | cut -d " " -f2 | \
+        tr ' ' '\n')" scp sftp ssh
+}
+
+init_local
+init_system
+
+shopt -s autocd
+shopt -s histappend
+shopt -s checkwinsize
+shopt -s hostcomplete
