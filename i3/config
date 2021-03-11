@@ -10,11 +10,14 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-font pango: Noto Sans 8
+#font pango: Noto Sans 8
+font pango:FiraCode Nerd Font 12
 floating_modifier $mod
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec rofi lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+bindsym $mod+a exec rofi lines 12 -padding 18 -width 60 -location 0 -show window -sidebar-mode -columns 3 -font 'FiraCode Nerd Font 12'
+bindsym $mod+s exec rofi lines 12 -padding 18 -width 60 -location 0 -show ssh -sidebar-mode -columns 3 -font 'FiraCode Nerd Font 12'
+bindsym $mod+d exec rofi lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'FiraCode Nerd Font 12'
 bindsym $mod+Shift+d exec dmenu_run
 
 # tweak volumes
@@ -59,9 +62,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -148,7 +151,7 @@ bar {
     }
         status_command i3status
 	
-    font pango:DejaVu Sans Mono 16
+    font pango:FiraCode Nerd Font 12
 }
 
 gaps inner 10
@@ -167,6 +170,10 @@ client.background           #2f343f
 fake-outputs 1920x1080+0+0,1920x1080+1920+0
 force_xinerama yes
 
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id /usr/bin/xsetroot -solid "#333333"
 exec --no-startup-id /usr/bin/setxkbmap -layout us,se
 exec --no-startup-id /usr/bin/setxkbmap -option 'grp:alt_shift_toggle'
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/autocutsel -fork -selection CLIPBOARD
+exec --no-startup-id /usr/bin/autocutsel -fork -selection PRIMARY
