@@ -1,0 +1,7 @@
+redshift-gtk &
+nm-applet &
+xscreensaver -nosplash &
+setxkbmap -layout us,se
+setxkbmap -option 'grp:alt_shift_toggle'
+autocutsel -fork -selection CLIPBOARD
+autocutsel -fork -selection PRIMARY
