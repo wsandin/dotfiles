@@ -10,7 +10,7 @@ altscreen             on              # default: off
 defbce                on              # default: off
 defnonblock           on              # default: off
 attrcolor b ".I"
-defscrollback         1000            # default: 100
+defscrollback         100000          # default: 100
 msgminwait            3               # default: 1
 silencewait           15              # default: 30
 
