@@ -10,7 +10,10 @@ parse_git_branch() {
 ### Environment
 PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 
-export PS1='\[\033[01;34m\]\u@\h \e[38;5;211m\W\e[38;5;48m $(parse_git_branch)\[\033[00m\]\$ '
+reset=$(tput sgr0)
+bold=$(tput bold)
+export PS1='\[\033[01;34m\]\u@\h \e[38;5;211m\W\e[38;5;48m $(parse_git_branch)\[\033[00m\]\[$bold\]$\[$reset\] '
+export PROMPT_COMMAND="echo -n \[\$(date +%H:%M:%S)\]\ "
 
 export HISTSIZE=10000
 export HISTFILESIZE=20000
