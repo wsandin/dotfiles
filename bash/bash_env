@@ -13,7 +13,6 @@ PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 reset=$(tput sgr0)
 bold=$(tput bold)
 export PS1='\[\033[01;34m\]\u@\h \e[38;5;211m\W\e[38;5;48m $(parse_git_branch)\[\033[00m\]\[$bold\]$\[$reset\] '
-export PROMPT_COMMAND="echo -n \[\$(date +%H:%M:%S)\]\ "
 
 export HISTSIZE=10000
 export HISTFILESIZE=20000
@@ -40,3 +39,14 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;42;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
+
+case ${TERM} in
+
+  xterm*|rxvt*|alacritty|Eterm|aterm|kterm|gnome*)
+     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+
+    ;;
+  screen*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+    ;;
+esac
