@@ -1,10 +1,14 @@
 set editing-mode vi
+set keymap vi
 set completion-ignore-case on
-set input-meta on
-set output-meta on
-set convert-meta off
+#set input-meta on
 
-Control-l: clear-screen
+
+"\C-n":next-history
+"\C-a.":beginning-of-line
+"\C-e.":end-of-line
+"\C-L":clear-screen
+#set output-meta on
 
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
