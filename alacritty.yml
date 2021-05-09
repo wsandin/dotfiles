@@ -1,21 +1,32 @@
-window:
-  padding:
-    x: 15
-    y: 12
+#background_opacity: 0.10
+bell:
+  duration: 0
+
+cursor:
+  style:
+    shape: Block
+    blinking: On
+    blink_interval: 15000
 
 colors:
   primary:
-      background: '0x282828'
-      foreground: "0xebdbb2"
+    background: '0x282828'
+    foreground: "0xebdbb2"
+
+env:
+  TERM: xterm-256color
 
 font:
   size: 10.0
   family: Hermit
-  
-save_to_clipboard: true
-#background_opacity: 0.85
-window.dynamic_title: true
 
+key_bindings:
+  - { key: Equals,mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: PageUp, mods: Shift, action: ScrollPageUp }
+  - { key: PageDown,mods: Shift, action: ScrollPageDown }
+
+save_to_clipboard: true
 scrolling:
   history: 100000
   multiplier: 3
@@ -23,18 +34,9 @@ scrolling:
 mouse:
   hide_when_typing: true
 
-  url:
-    launcher:
-      program: 'chrome.sh'
 
-bell:
-  duration: 0
-
-env:
-  TERM: xterm-256color
-
-key_bindings:
-  - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: Minus,  mods: Control, action: DecreaseFontSize }
-  - { key: PageUp,   mods: Shift,   action: ScrollPageUp }
-  - { key: PageDown, mods: Shift,   action: ScrollPageDown }
+window.dynamic_title: true
+window:
+  padding:
+    x: 15
+    y: 12
