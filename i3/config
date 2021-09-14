@@ -170,6 +170,9 @@ client.background           #2f343f
 fake-outputs 1920x1080+0+0,1920x1080+1920+0
 force_xinerama yes
 
+bindsym $mod+Shift+F1 move container to scratchpad
+bindsym $mod+F1 [class="^((?!Terminator).)*$"] scratchpad show
+
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id /usr/bin/xsetroot -solid "#333333"
 exec --no-startup-id /usr/bin/setxkbmap -layout us,se

@@ -1,5 +1,7 @@
 syntax on
-colorscheme delek
+colorscheme zellner
+"colorscheme slate
+
 filetype indent plugin on
 
 set number
@@ -9,6 +11,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+"set textwidth=80
 set nowrap
 set visualbell
 set noswapfile
@@ -16,6 +19,7 @@ set nomodeline
 set nobackup
 set nowb
 set hlsearch
+set list
 "set cursorline
 
 " Set default syntax highlighting to 'sh' for files without an extension
@@ -75,8 +79,10 @@ nnoremap td :tabclose<CR>
 """NERDtree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-nnoremap <Leader>f :NERDTreeToggle<Enter>
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 ""Local bindings
 " Quick jumping between splits
@@ -94,7 +100,7 @@ map Q  <C-W>q
 let $SUDO_ASKPASS = '/usr/bin/ssh-askpass'
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
