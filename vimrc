@@ -39,6 +39,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -54,6 +57,31 @@ nnoremap <leader>fl       :Lines<CR>
 nnoremap <leader>ag       :Ag! <C-R><C-W><CR>
 nnoremap <leader>m        :History<CR>
 nnoremap <leader>h        :Commits<CR>
+
+""" slime
+"let g:slime_target = 'screen'
+let g:slime_target = "vimterminal"
+let g:slime_python_ipython = 1
+
+nnoremap <Leader>s :SlimeSend1 ipython<CR>
+nnoremap <Leader>r :IPythonCellRun<CR>
+nnoremap <Leader>R :IPythonCellRunTime<CR>
+nnoremap <Leader>c :IPythonCellExecuteCell<CR>
+nnoremap <Leader>C :IPythonCellExecuteCellJump<CR>
+nnoremap <Leader>l :IPythonCellClear<CR>
+nnoremap <Leader>x :IPythonCellClose<CR>
+nnoremap [c :IPythonCellPrevCell<CR>
+nnoremap ]c :IPythonCellNextCell<CR>
+nmap <Leader>h <Plug>SlimeLineSend
+xmap <Leader>h <Plug>SlimeRegionSend
+nnoremap <Leader>p :IPythonCellPrevCommand<CR>
+nnoremap <Leader>Q :IPythonCellRestart<CR>
+nnoremap <Leader>d :SlimeSend1 %debug<CR>
+nnoremap <Leader>q :SlimeSend1 exit<CR>
+nmap <F9> :IPythonCellInsertAbove<CR>a
+nmap <F10> :IPythonCellInsertBelow<CR>a
+imap <F9> <C-o>:IPythonCellInsertAbove<CR>
+imap <F10> <C-o>:IPythonCellInsertBelow<CR>
 
 """ Tab navigation
 " Go to tab by number
