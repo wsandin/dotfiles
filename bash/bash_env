@@ -8,7 +8,7 @@ parse_git_branch() {
 
 
 ### Environment
-PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 
 reset=$(tput sgr0)
 bold=$(tput bold)
