@@ -13,9 +13,16 @@ attrcolor b ".I"
 defscrollback         100000          # default: 100
 msgminwait            3               # default: 1
 silencewait           15              # default: 30
+defutf8               on
 
 shell                 -$SHELL
+term                  "screen-256color"
 
+# 2 line colorful statusbar
 hardstatus alwayslastline
 hardstatus string "%{.WK}%-w%{.ry}%n %t%{-}%+w %=%{+b ..K}%H %m/%d %C%a "
 sorendition yr # yellow on red
+
+# 1 line lean statusbar
+#hardstatus alwayslastline
+#hardstatus string "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D,%c:%s "
