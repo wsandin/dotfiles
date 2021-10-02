@@ -29,6 +29,7 @@
 
 !! URxvt Appearance
 URxvt*font: xft:Hack:pixelsize=12.5
+URxvt*.termName: rxvt-unicode-256color
 URxvt.geometry: 92x24
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
