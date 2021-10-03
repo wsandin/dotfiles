@@ -1,5 +1,5 @@
 syntax on
-colorscheme zellner
+colorscheme gruvbox
 "colorscheme slate
 
 filetype indent plugin on
@@ -20,6 +20,7 @@ set nobackup
 set nowb
 set hlsearch
 set list
+set bg=dark
 "set cursorline
 
 " Set default syntax highlighting to 'sh' for files without an extension
@@ -111,6 +112,9 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+"""Clipboard hack
+vnoremap <silent><Leader>y "yy <Bar> :call system('xclip', @y)<CR>
 
 ""Local bindings
 " Quick jumping between splits
