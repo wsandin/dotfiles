@@ -1,0 +1,20 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.vim/colors: vim/colors
+    ~/.vimrc: vim/vimrc
+    ~/.screenrc: screenrc
+    ~/bash/bash_aliases: .bash_aliases 
+    ~/bash/bash_binds: .bash_binds
+    ~/bash/bash_envs: .bash_envs
+    ~/bash/bash_functions: .bash_functions
+    ~/bash/bash_bashrc: .bash_functions
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim]
