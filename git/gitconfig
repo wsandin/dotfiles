@@ -14,5 +14,23 @@
     defaultBranch = main
 [core]
     pager = delta
+    excludesfile = /home/ws/.gitignore_globa
 [interactive]
     diffFilter = delta --color-only
+[alias]
+[alias]
+  a = add
+  b = branch
+  c = commit
+  cl = clone
+  co = checkout
+  h = history
+  l = pull
+  p = push
+  fz = fuzzy
+  ht = history
+  rb = rebase
+  rw = review
+  st = status
+[color]
+  ui = trueu
