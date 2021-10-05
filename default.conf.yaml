@@ -12,10 +12,14 @@
     ~/.inputrc: readline/inputrc
     ~/.bash_aliases: bash/bash_aliases 
     ~/.bash_binds: bash/bash_binds
-    ~/.bash_envs: bash/bash_envs
+    ~/.bash_env: bash/bash_env
     ~/.bash_functions: bash/bash_functions
-    ~/.bash_bashrc: bash/bash_functions
-    ~/.gitconfig: git/gitconfig
+    ~/.bash_bashrc:
+        path: bash/bash_functions
+        relink: true
+    ~/.gitconfig:
+        path: git/gitconfig
+        relink: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
