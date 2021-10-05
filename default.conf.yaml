@@ -20,6 +20,8 @@
     ~/.gitconfig:
         path: git/gitconfig
         relink: true
+    ~/.dircolors:
+        path: dircolors
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
